@@ -37,7 +37,7 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050001;
-        public static final int btn_display=0x7f050005;
+        public static final int btn_ok=0x7f050005;
         public static final int chk_3G=0x7f050003;
         public static final int chk_Audio=0x7f050002;
         public static final int chk_Bluetooth=0x7f050004;
