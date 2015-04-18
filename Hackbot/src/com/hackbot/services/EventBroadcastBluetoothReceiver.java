@@ -17,7 +17,7 @@ public class EventBroadcastBluetoothReceiver extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-		algo=new Algo(context);
+		algo=new Algo(context.getApplicationContext());
 		if (intent.getAction().equals(BluetoothAdapter.ACTION_STATE_CHANGED))
         {
         	

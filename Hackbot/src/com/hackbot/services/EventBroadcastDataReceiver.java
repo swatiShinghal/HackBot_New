@@ -18,7 +18,7 @@ public class EventBroadcastDataReceiver extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-		algo=new Algo(context);
+		algo=new Algo(context.getApplicationContext());
 		if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION))
         {
             Log.d("app", "Phone connectivity mode changed");

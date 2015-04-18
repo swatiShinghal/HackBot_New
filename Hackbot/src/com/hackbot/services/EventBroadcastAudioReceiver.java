@@ -32,7 +32,7 @@ public class EventBroadcastAudioReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context ctx, Intent intent) {
 
-		algo=new Algo(ctx);
+		algo=new Algo(ctx.getApplicationContext());
 		Toast.makeText(ctx, "Started", Toast.LENGTH_SHORT).show();
         
         if (intent.getAction().equals(AudioManager.RINGER_MODE_CHANGED_ACTION)) {
