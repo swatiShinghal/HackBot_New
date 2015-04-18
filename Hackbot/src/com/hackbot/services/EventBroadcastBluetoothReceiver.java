@@ -13,12 +13,7 @@ public class EventBroadcastBluetoothReceiver extends BroadcastReceiver
 {
 
 	private Algo algo;
-	public EventBroadcastBluetoothReceiver(Algo algo)
-	{
-		super();
-		this.algo = algo;
 
-	}
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{

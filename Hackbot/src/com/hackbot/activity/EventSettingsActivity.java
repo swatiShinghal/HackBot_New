@@ -56,30 +56,37 @@ public class EventSettingsActivity extends Activity {
 			public void onClick(View v) {
 				List<Events> eventList = new ArrayList<Events>();
 
-                //Audio checkbox
-                int isAudioChecked = 0;
-                if (chkAudio.isChecked()) {
-                        isAudioChecked = 1;
-                }
-                eventList.add(new Events(EventIdConstant.AUDIO_ON, "AUDIO_ON", isAudioChecked));
-                eventList.add(new Events(EventIdConstant.AUDIO_OFF, "AUDIO_OFF", isAudioChecked));
-
-                //3G checkbox
-                int is3GChecked = 0;
-                if (chk3G.isChecked()) {
-                        is3GChecked = 1;
-                }
-                eventList.add(new Events(EventIdConstant.DATA_ON, "3G_ON", is3GChecked));
-                eventList.add(new Events(EventIdConstant.DATA_OFF, "3G_OFF", is3GChecked));
+				//Audio checkbox
+				int isAudioChecked = 0;
+				if (chkAudio.isChecked()) {
+					isAudioChecked = 1;
+					eventList.add(new Events(EventIdConstant.AUDIO_ON, "AUDIO_ON", isAudioChecked));     
+				}
+				else
+				{                
+					eventList.add(new Events(EventIdConstant.AUDIO_OFF, "AUDIO_OFF", isAudioChecked));
+				}                //3G checkbox
+				int is3GChecked = 0;
+				if (chk3G.isChecked()) {
+					is3GChecked = 1;
+					eventList.add(new Events(EventIdConstant.DATA_ON, "3G_ON", is3GChecked));
+				}
+				else
+				{
+					eventList.add(new Events(EventIdConstant.DATA_OFF, "3G_OFF", is3GChecked));
+				}
 
                 //Bluetooth checkbox
-                int isBluetoothChecked = 0;
-                if (chkBluetooth.isChecked()) {
-                        isBluetoothChecked = 1;
-                }
-                
-                eventList.add(new Events(EventIdConstant.BLUETOOTH_ON, "BLUETOOTH_ON", isBluetoothChecked));
-                eventList.add(new Events(EventIdConstant.BLUETOOTH_OFF, "BLUETOOTH_OFF", isBluetoothChecked));
+				int isBluetoothChecked = 0;
+				if (chkBluetooth.isChecked())
+				{
+					isBluetoothChecked = 1;
+					eventList.add(new Events(EventIdConstant.BLUETOOTH_ON, "BLUETOOTH_ON", isBluetoothChecked));
+				}
+				else
+				{                               
+					eventList.add(new Events(EventIdConstant.BLUETOOTH_OFF, "BLUETOOTH_OFF", isBluetoothChecked));
+				}
                 
 				StringBuffer result = new StringBuffer();
 				result.append("IPhone check : ").append(chkAudio.isChecked());
@@ -133,7 +140,12 @@ public class EventSettingsActivity extends Activity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
+		if (mConnection != null)
+		{
+			unbindService(mConnection);
+		}
 		stopService();
+		
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

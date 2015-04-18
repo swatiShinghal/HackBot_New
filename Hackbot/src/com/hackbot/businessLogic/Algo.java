@@ -319,6 +319,14 @@ public class Algo {
 		
 	}
 	
+	public void destroy()
+	{
+		if (mConnection != null)
+		{
+			context.unbindService(mConnection);
+		}
+	}
+	
 	private ServiceConnection mConnection = new ServiceConnection() { 
 
 

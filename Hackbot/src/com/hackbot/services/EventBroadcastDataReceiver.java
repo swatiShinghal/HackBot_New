@@ -13,16 +13,12 @@ import android.util.Log;
 public class EventBroadcastDataReceiver extends BroadcastReceiver
 {
 	private Algo algo;
-	public EventBroadcastDataReceiver(Algo algo)
-	{
-		super();
-		this.algo = algo;
 
-	}
 
 	@Override
-	public void onReceive(Context context, Intent intent) {
-		
+	public void onReceive(Context context, Intent intent)
+	{
+		algo=new Algo(context);
 		if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION))
         {
             Log.d("app", "Phone connectivity mode changed");

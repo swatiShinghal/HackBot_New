@@ -28,12 +28,7 @@ public class EventBroadcastAudioReceiver extends BroadcastReceiver {
 	
 	private List<Events> eventSettingsList;
 	private Algo algo;
-	public EventBroadcastAudioReceiver(Algo algo)
-	{
-		super();
-		this.algo = algo;
 
-	}
 	@Override
 	public void onReceive(Context ctx, Intent intent) {
 
